@@ -142,7 +142,7 @@ public class Inicio extends AppCompatActivity {
         cardInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),Informacion.class);
+                Intent i = new Intent(getApplicationContext(),PerfilOpciones.class);
                 startActivity(i);
             }
         });

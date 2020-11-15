@@ -80,7 +80,7 @@ public class ModPerfil extends AppCompatActivity {
 
         //fin
 
-        txtID = findViewById(R.id.edt_idM);
+       // txtID = findViewById(R.id.edt_idM);
         txtNombre = findViewById(R.id.edt_NombreM);
         txtApellido = findViewById(R.id.edt_ApellidoM);
         txtEmail = findViewById(R.id.edt_EmailM);
@@ -93,7 +93,7 @@ public class ModPerfil extends AppCompatActivity {
         txtTelefono.setEnabled(true);
         txtContrasegna.setEnabled(true);
 
-        txtID.setEnabled(false);
+       // txtID.setEnabled(false);
 
         SQLiteDatabase db = conn.getWritableDatabase(); //abrimos BBDD
 
@@ -307,6 +307,7 @@ public class ModPerfil extends AppCompatActivity {
                    // btnSalir.setEnabled(false);
                     tomarFoto.setEnabled(true);
                     btnEliminarCuentaMP.setEnabled(true);
+                    btnSalir.setEnabled(false);
 
                     Toast.makeText(this, "Perfíl modificado correctamente", Toast.LENGTH_SHORT).show();
                 }else {

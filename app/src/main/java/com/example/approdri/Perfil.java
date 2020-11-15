@@ -31,7 +31,7 @@ public class Perfil extends AppCompatActivity {
         Bundle miBundle2=this.getIntent().getExtras();
         String DatoEmail=miBundle2.getString("email2");
 
-        tv_id=findViewById(R.id.tv_idP2);
+      //  tv_id=findViewById(R.id.tv_idP2);
         tv_nombre=findViewById(R.id.tv_nombreP2);
         tv_apellido=findViewById(R.id.tv_apellidoP2);
         tv_email=findViewById(R.id.tv_emailP2);

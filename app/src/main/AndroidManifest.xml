@@ -15,7 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Generico"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PerfilOpciones"></activity>
+        <activity android:name=".InfoApp"></activity>
+        <activity android:name=".InfoPerfil" />
+        <activity android:name=".InfoListadoArt" />
+        <activity android:name=".InfoEconomia" />
+        <activity android:name=".InfoInsertarArt" />
+        <activity android:name=".Info_insertarCategoria" />
+        <activity android:name=".PerfilOpciones" />
         <activity android:name=".Informacion" />
         <activity android:name=".PerfilArticulos" />
         <activity android:name=".RecyclerArticulos" />

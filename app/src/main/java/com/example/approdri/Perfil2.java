@@ -69,7 +69,7 @@ public class Perfil2 extends AppCompatActivity {
         apellidoMD=findViewById(R.id.tv_apellidoP2);
         emailMD=findViewById(R.id.tv_emailP2);
         telefonoMD=findViewById(R.id.tv_telefonoP2);
-        idMD=findViewById(R.id.tv_idP2);
+      //  idMD=findViewById(R.id.tv_idP2);
         imgP2=findViewById(R.id.imgPerfil2);
 
     }

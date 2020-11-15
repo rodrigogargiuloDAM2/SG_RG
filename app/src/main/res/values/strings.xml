@@ -12,4 +12,63 @@
     <string name="Password"> Password: </string>
     <string name="InicioSesion">Inicio Sesión</string>
     <string name="registrar">Registrar</string>
+
+
+    //Información app
+    <string name="infoInsertCategoria">En esta sección de la app deberás insertar al menos una
+    categoría para poder insertar un artículo. Como máximo se podrán insertar 10 categorías.
+    Las categorías son comunes para todas las cuentas de usuarios.
+    Para eliiminar una categoría deberás escribir el nombre de la categoria que desea eliminar, y posteriormente
+    precionar el botón de eliminar.
+    En la parte inferior vemos el número de categorías insertadas.</string>
+
+    <string name="insArticulo">
+        Deberás introducir todos los datos solicitados para poder insertar el artículo.
+        Tambíen tienes la opción de insertar una foto para el artículo, a través de la galería
+        o directamente tomando una foto desde la cámara.
+    </string>
+
+    <string name="infoEco">
+        Deberás introducir un presupuesto, y al presionar el botón de "calcular" se calculará
+        el precio total, el número de productos distintos insertados, y el beneficio obtenido
+        de todos los productos insertados para la sesión que está actualmente iniciada.
+
+    </string>
+
+    <string name="infoLArt">
+        Aquí podrás visualizar todos los artículos añadidos, y al presionar sobre ellos
+        podrás ver la información al completo de cada artículo, modificarlo o eliminarlo.
+
+    </string>
+
+    <string name="infoPerf">
+        Aquí podrás observar los datos de tu cuenta de usuario, también podrás cerrar sesión, y
+        modificar los datos de tu cuenta o incluso eliminarla.
+    </string>
+
+    <string name="infoApp">
+        \n
+        Versión: 1.0\n
+        \n
+        Realizada en: Android Studio\n
+        \n
+        Versión de Android:\n
+        A partir de Android 7.0\n
+        \n
+        Base de Datos: SQLite\n
+        \n
+        Creador: Rodrigo Gargiulo\n
+        \n
+        Empresa desarrolladora: Instock\n\n
+
+        ¡¡Gracias por utilizar nuestra app!!\n
+        \nPara más información contacten al siguiente email:
+        \nrodrigogargiulosilvera@gmail.com
+        \n
+
+
+
+
+    </string>
+
 </resources>
