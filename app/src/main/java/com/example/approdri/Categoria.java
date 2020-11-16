@@ -10,7 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +45,26 @@ public class Categoria extends AppCompatActivity {
         numeroC.moveToFirst();
         tv_ncategoria.setText("NºCategorias creadas: " + numeroC.getString(0));
 
+
+        //ListView Categorías
+        if (db!=null){
+            Cursor c = db.rawQuery("Select categoria from categorias",null);
+            int cantidad = c.getCount();
+            int i = 0;
+            String[] arreglo = new String[cantidad];
+            if (c.moveToFirst()){
+                do {
+                    String linea = "Nombre Categoría: "+c.getString(0);
+
+                    arreglo[i] = linea;
+                    i++;
+                }while (c.moveToNext());
+            }
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, arreglo);
+            ListView lista = findViewById(R.id.lv_categorias);
+            lista.setAdapter(adapter);
+        }
+
         db.close();
     }
 
@@ -68,6 +90,9 @@ public class Categoria extends AppCompatActivity {
 
             db.insert("categorias", null, registro);
 
+
+
+
             db.close();
             //limpiar campos
             et_categoria.setText("");
@@ -91,9 +116,9 @@ public class Categoria extends AppCompatActivity {
 
     }
 
-    public void Cancelar(View view){
-       finish();
-    }
+//    public void Cancelar(View view){
+//       finish();
+//    }
 
     public void EliminarCategoria(View view){
 
@@ -115,6 +140,7 @@ public class Categoria extends AppCompatActivity {
 
             if (cantidad == 1){
                 Toast.makeText(this, "Categoría eliminada correctamente", Toast.LENGTH_SHORT).show();
+                finish();
             }else {
                 Toast.makeText(this, "La categoría no existe", Toast.LENGTH_SHORT).show();
             }

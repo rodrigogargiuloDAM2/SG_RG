@@ -78,7 +78,14 @@ public class ModPerfil extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageViewMod);
 
+
         //fin
+
+        //Camara
+        //Inicializar Permisos
+        cameraPermissions = new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+        storagePermissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
 
        // txtID = findViewById(R.id.edt_idM);
         txtNombre = findViewById(R.id.edt_NombreM);
