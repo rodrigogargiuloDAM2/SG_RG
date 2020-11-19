@@ -53,9 +53,9 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
         ContentValues valores=new ContentValues();
         valores.put("nombre",nombre);
         valores.put("apellido",apellido);
-        valores.put("email",email);
+        valores.put("email",email.toLowerCase());
         valores.put("telefono",telefono);
-        valores.put("contrasegna",contrasegna);
+        valores.put("contrasegna",contrasegna.toLowerCase());
 
         this.getWritableDatabase().insert("usuarios",null,valores);
     }
@@ -67,7 +67,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("email",email);
+        cv.put("email",email.toLowerCase());
         cv.put("img",image);
         database.update("usuarios",cv,"email='"+ email+"'", null);
     }
@@ -132,8 +132,8 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public Cursor ConsultarUsuPas(String email, String contrasegna) throws SQLException {
         Cursor mcursor=null;
         mcursor=this.getReadableDatabase().query("usuarios",new String[]{
-                "nombre","apellido","email","telefono","contrasegna"},"email like '"+email+"' " +
-                "and contrasegna like '"+contrasegna+"'",null,null,null,null);
+                "nombre","apellido","email","telefono","contrasegna"},"email like '"+email.toLowerCase()+"' " +
+                "and contrasegna like '"+contrasegna.toLowerCase()+"'",null,null,null,null);
         return mcursor;
     }
 

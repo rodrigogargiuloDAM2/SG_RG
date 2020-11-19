@@ -3,6 +3,7 @@ package com.example.approdri;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -31,6 +32,30 @@ public class Economia extends AppCompatActivity {
         tv_PrecioTotal = findViewById(R.id.tv_precioTotal);
         tv_Beneficios = findViewById(R.id.tv_beneficio);
         tv_productosAlmacenados = findViewById(R.id.tv_productosAlmacenados);
+
+        //Mostrar lista
+        SQLiteDatabase db = conn.getWritableDatabase();
+        Bundle miBundle2=this.getIntent().getExtras();
+        String DatoEmail=miBundle2.getString("emailEcon");
+        if (db!=null){
+            Cursor c = db.rawQuery("Select id_econ, presupuesto, precioTotal, beneficios, productosAlmacenados from economia where email='"+DatoEmail+"'",null);
+            int cantidad = c.getCount();
+            int i = 0;
+            String[] arreglo = new String[cantidad];
+            if (c.moveToFirst()){
+                do {
+                    String linea = "ID: "+c.getInt(0) +" \nPresupuesto: "+c.getInt(1) + " \nPrecio Total: " +c.getInt(2) + " \nBeneficios: " + c.getInt(3)+ " \nNúmero de Productos: " + c.getString(4);
+
+                    arreglo[i] = linea;
+                    i++;
+                }while (c.moveToNext());
+            }
+            ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, arreglo);
+            ListView lista = findViewById(R.id.lv_economia);
+            lista.setAdapter(adapter);
+
+        }
+
 
 
     }
@@ -102,6 +127,7 @@ public class Economia extends AppCompatActivity {
                 ArrayAdapter<String>adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, arreglo);
                 ListView lista = findViewById(R.id.lv_economia);
                 lista.setAdapter(adapter);
+
             }
 
 
@@ -115,6 +141,31 @@ public class Economia extends AppCompatActivity {
         }else {
             Toast.makeText(this, "Debes introducir el presupuesto", Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+
+    public void EliminarDatosEcoList(View view){
+
+        Bundle miBundle2=this.getIntent().getExtras();
+        String DatoEmail=miBundle2.getString("emailEcon");
+
+        SQLiteDatabase db = conn.getWritableDatabase(); //abrimos BBDD
+        // String id=txtID.getText().toString();
+
+        int cantidad = db.delete("economia","email='" + DatoEmail+"'", null);  //cantidad de articulos borrados ,, metodo delete
+
+        db.close();
+
+
+
+        if (cantidad >= 1 ){
+            Toast.makeText(this, "Lista Economía Vaciada, Usuario: " + DatoEmail, Toast.LENGTH_SHORT).show();
+            finish();
+        }else {
+            Toast.makeText(this, "Error al vaciar lista", Toast.LENGTH_SHORT).show();
+        }
+
 
     }
 }

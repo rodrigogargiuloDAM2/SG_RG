@@ -274,7 +274,7 @@ public class ModPerfil extends AppCompatActivity {
 
         String nombre = txtNombre.getText().toString();
         String apellido = txtApellido.getText().toString();
-        String email = txtEmail.getText().toString();
+        String email = txtEmail.getText().toString().toLowerCase();
         String telefono = txtTelefono.getText().toString();
         String contrasegna = txtContrasegna.getText().toString();
 

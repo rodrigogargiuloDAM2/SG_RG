@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(),Inicio.class);
 
                 Bundle miBundle=new Bundle();
-                miBundle.putString("email",txtEmail.getText().toString());
+                miBundle.putString("email",txtEmail.getText().toString().toLowerCase());
 
                 i.putExtras(miBundle);
 
