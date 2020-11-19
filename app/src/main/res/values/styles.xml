@@ -12,7 +12,7 @@
     <style name="Inicio" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#000000</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/moradoO</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -20,8 +20,8 @@
     <style name="Generico" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#5EA1C0</item>
-        <item name="colorPrimaryDark">@color/colorAzulRey</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/moradoO</item>
+        <item name="colorAccent">@color/colorGranada</item>
     </style>
 
 

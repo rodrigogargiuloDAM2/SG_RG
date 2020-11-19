@@ -37,7 +37,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_weight="1"
                     android:text="Acerca de:"
-                    android:textColor="@color/colorNegro"
+                    android:textColor="@color/moradoO"
                     android:textSize="24sp"
                     android:textStyle="bold|italic" />
             </LinearLayout>
@@ -83,7 +83,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="Insertar Categoría"
                             android:textAlignment="center"
-                            android:textColor="@color/colorNegro"
+                            android:textColor="@color/moradoO"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -98,6 +98,7 @@
                     android:layout_marginBottom="10dp"
                     android:foreground="?selectableItemBackground"
                     android:onClick="InfoInsertArt"
+                    app:cardBackgroundColor="@color/moradoO"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="6dp"
                     app:layout_columnWeight="1"
@@ -122,7 +123,7 @@
                             android:layout_gravity="center_horizontal"
                             android:text="Insertar Artículo"
                             android:textAlignment="center"
-                            android:textColor="@color/colorNegro"
+                            android:textColor="@color/colorBlanco"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -160,7 +161,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="Economía"
                             android:textAlignment="center"
-                            android:textColor="@color/colorNegro"
+                            android:textColor="@color/moradoO"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -175,6 +176,7 @@
                     android:layout_marginBottom="10dp"
                     android:foreground="?selectableItemBackground"
                     android:onClick="InfoLart"
+                    app:cardBackgroundColor="@color/moradoO"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="6dp"
                     app:layout_columnWeight="1"
@@ -198,7 +200,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="Listado de Artículos"
                             android:textAlignment="center"
-                            android:textColor="@color/colorNegro"
+                            android:textColor="@color/colorBlanco"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -237,7 +239,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="Perfíl"
                             android:textAlignment="center"
-                            android:textColor="@color/colorNegro"
+                            android:textColor="@color/moradoO"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -252,6 +254,7 @@
                     android:layout_marginBottom="10dp"
                     android:foreground="?selectableItemBackground"
                     android:onClick="InfoApp"
+                    app:cardBackgroundColor="@color/moradoO"
                     app:cardCornerRadius="8dp"
                     app:cardElevation="6dp"
                     app:layout_columnWeight="1"
@@ -275,7 +278,7 @@
                             android:layout_centerHorizontal="true"
                             android:text="Información de la app"
                             android:textAlignment="center"
-                            android:textColor="@color/colorNegro"
+                            android:textColor="@color/colorBlanco"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>

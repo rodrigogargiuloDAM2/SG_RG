@@ -15,12 +15,13 @@
     <color name="colorNikName">#CC33CC</color>
     <color name="colorInformacion">#F44236</color>
     <color name="colorFinal">#adba49</color>
-
+    <color name="morado">#2B3680</color>
+    <color name="moradoO">#242B68</color>
     <color name="colorBlancoTransparente">#cccccc</color>
     <color name="colorBlanco">#FFFFFF</color>
     <color name="colorTransparente">#00000000</color>
     <color name="colorAmarillo">#FECD02</color>
-    <color name="colorCeleste">#05aaf6</color>
+    <color name="colorCeleste">#1074A3</color>
     <color name="colorRojo">#f44337</color>
     <color name="colorVerde">#29C96B</color>
     <color name="colorNaranja">#ff9802</color>

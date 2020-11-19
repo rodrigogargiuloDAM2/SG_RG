@@ -18,18 +18,25 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="120dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/captura3" />
+
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Datos del Usuario"
-                android:textSize="28dp"
-                android:textStyle="bold|italic"
-                android:textColor="@color/colorNegro"
                 android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="40dp"
+                android:text="Datos del Usuario"
                 android:textAlignment="center"
-                android:layout_marginTop="50dp"/>
+                android:textColor="@color/moradoO"
+                android:textSize="28dp"
+                android:textStyle="bold|italic" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
@@ -39,7 +46,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="20dp"
-                app:cardBackgroundColor="#3A3939"
+                app:cardBackgroundColor="@color/moradoO"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="10dp"
 
@@ -178,28 +185,32 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="20dp">
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/button3"
+                            style="@android:style/Widget.Material.Button.Inset"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
 
+                            android:layout_marginStart="8dp"
                             android:onClick="IrModPerf"
                             android:text="Modificar Datos De Perfíl"
+                            android:textColor="@color/moradoO"
                             android:textStyle="bold|italic" />
 
                         <Button
                             android:id="@+id/button5"
+                            style="@android:style/Widget.Material.Button.Inset"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
                             android:layout_marginLeft="10dp"
 
+                            android:layout_marginRight="10dp"
                             android:onClick="CerrarSesion"
                             android:text="Cerrar Sesión"
+                            android:textColor="@color/moradoO"
                             android:textStyle="bold|italic" />
                     </LinearLayout>
 

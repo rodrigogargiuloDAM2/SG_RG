@@ -8,6 +8,13 @@
     android:background="@drawable/inicio_2"
     tools:context=".Categoria">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="120dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/captura3" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -23,11 +30,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="40dp"
                 android:text="Creación de categorías"
                 android:textAlignment="center"
-                android:textColor="@color/colorNegro"
+                android:textColor="@color/moradoO"
                 android:textSize="28dp"
                 android:textStyle="bold|italic" />
 
@@ -67,20 +74,23 @@
 
                         <Button
                             android:id="@+id/button8"
+                            style="@android:style/Widget.Material.Button.Inset"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:onClick="Aceptar"
-                            android:text="Insertar"
 
-                            />
+                            android:text="Insertar"
+                            android:textColor="@color/moradoO" />
 
                         <Button
                             android:id="@+id/button6"
+                            style="@android:style/Widget.Material.Button.Inset"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
                             android:onClick="EliminarCategoria"
-                            android:text="Eliminar Categoria" />
+                            android:text="Eliminar Categoria"
+                            android:textColor="@color/moradoO" />
                     </LinearLayout>
 
                     <TextView
@@ -105,7 +115,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Categorías Insertadas"
                 android:textAlignment="center"
-                android:textColor="@color/colorNegro"
+                android:textColor="@color/moradoO"
                 android:textSize="22sp"
                 android:textStyle="bold|italic" />
 
