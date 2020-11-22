@@ -12,7 +12,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -55,7 +54,7 @@ public class InsertarArticulo extends AppCompatActivity {
 
     Button tomarFoto, btn_save;
 
-    boolean existe;
+
     ImageView imageView;
 
     //fin
@@ -300,9 +299,8 @@ public class InsertarArticulo extends AppCompatActivity {
         }
     }
 
-    //fin
 
-    //Ctrl
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
@@ -331,9 +329,7 @@ public class InsertarArticulo extends AppCompatActivity {
 
     public void GuardarFotoProducto(View view){
         final Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
-        //PutExtra
-        //   Bundle miBundleR=this.getIntent().getExtras();
-        // final String DatoEmail=miBundleR.getString("emailRodrigo");
+
         Bundle miBundle2=this.getIntent().getExtras();
         String DatoEmail=miBundle2.getString("emailInsertar");
 
@@ -458,8 +454,7 @@ public class InsertarArticulo extends AppCompatActivity {
             btnMas.setEnabled(false);
             btnMenos.setEnabled(false);
 
-            //Intent i = new Intent(getApplicationContext(),Inicio.class);
-            //startActivity(i);
+
             Toast.makeText(this, "Ahora ingrese una foto", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
@@ -471,6 +466,6 @@ public class InsertarArticulo extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
-       // Toast.makeText(this, "Botón atrás inhabilitado", Toast.LENGTH_SHORT).show();
+
     }
 }

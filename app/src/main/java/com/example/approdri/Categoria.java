@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -116,9 +115,7 @@ public class Categoria extends AppCompatActivity {
 
     }
 
-//    public void Cancelar(View view){
-//       finish();
-//    }
+
 
     public void EliminarCategoria(View view){
 

@@ -19,10 +19,10 @@ public class RecyclerViewAdaptadorArticulos extends RecyclerView.Adapter<Recycle
     public static class ViewHolder extends RecyclerView.ViewHolder  {
         private static TextView email ,nombreProducto, idProducto;
         private static CardView cardArticulosList;
-        //int varUsu=0;
 
 
-        //COntexto
+
+        //Contexto
         Context context;
 
         public ViewHolder( View itemView) {
@@ -52,7 +52,6 @@ public class RecyclerViewAdaptadorArticulos extends RecyclerView.Adapter<Recycle
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.disegno_recycler_articulos,parent,false);
-        //View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_grid_usuarios,parent,false);
 
 
 
@@ -74,7 +73,7 @@ public class RecyclerViewAdaptadorArticulos extends RecyclerView.Adapter<Recycle
 
 
 
-        // holder.setOnClickListener();
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

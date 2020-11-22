@@ -45,7 +45,7 @@ public class ModPerfil extends AppCompatActivity {
 
     AdminSQLiteOpenHelper conn = new AdminSQLiteOpenHelper(this,"administracion", null, 1);
 
-    EditText txtID, txtNombre, txtApellido, txtEmail, txtTelefono, txtContrasegna;
+    EditText  txtNombre, txtApellido, txtEmail, txtTelefono, txtContrasegna;
 
     //Imagen
 
@@ -87,7 +87,7 @@ public class ModPerfil extends AppCompatActivity {
         storagePermissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
 
-       // txtID = findViewById(R.id.edt_idM);
+
         txtNombre = findViewById(R.id.edt_NombreM);
         txtApellido = findViewById(R.id.edt_ApellidoM);
         txtEmail = findViewById(R.id.edt_EmailM);
@@ -100,7 +100,7 @@ public class ModPerfil extends AppCompatActivity {
         txtTelefono.setEnabled(true);
         txtContrasegna.setEnabled(true);
 
-       // txtID.setEnabled(false);
+
 
         SQLiteDatabase db = conn.getWritableDatabase(); //abrimos BBDD
 
@@ -267,7 +267,7 @@ public class ModPerfil extends AppCompatActivity {
     public void ModificarDatosPerfil(View view)
     {
      SQLiteDatabase db = conn.getWritableDatabase(); //abrimos BBDD
-        //String id=txtID.getText().toString();
+
         Bundle miBundle2=this.getIntent().getExtras();
         String DatoEmailM=miBundle2.getString("email3");
 
@@ -311,7 +311,6 @@ public class ModPerfil extends AppCompatActivity {
                     txtEmail.setEnabled(false);
                     txtTelefono.setEnabled(false);
                     txtContrasegna.setEnabled(false);
-                   // btnSalir.setEnabled(false);
                     tomarFoto.setEnabled(true);
                     btnEliminarCuentaMP.setEnabled(true);
                     btnSalir.setEnabled(false);
@@ -427,10 +426,6 @@ public class ModPerfil extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-       // finish();
-        //Intent i = new Intent(getApplicationContext(),MainActivity.class);
-        //startActivity(i);
-        //Toast.makeText(this, "Debes seleccionar/tomar una foto.", Toast.LENGTH_SHORT).show();
 
     }
 

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -56,7 +55,7 @@ public class PerfilArticulos extends AppCompatActivity {
 
     Button tomarFoto, btn_save , sinMod;
 
-    boolean existe;
+
     ImageView imageView;
 
     //fin
@@ -160,8 +159,6 @@ public class PerfilArticulos extends AppCompatActivity {
 
 
         //tomarFoto
-        //tomarFoto=findViewById(R.id.btn_tomarFotoProdMP);
-       // tomarFoto.setEnabled(false);
         tomarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -175,7 +172,6 @@ public class PerfilArticulos extends AppCompatActivity {
         conn = new AdminSQLiteOpenHelper(this,"administracion", null, 1);
         SQLiteDatabase db = conn.getWritableDatabase(); //abrimos BBDD
 
-       // Bundle miBundle2=this.getIntent().getExtras();
         String DatoEmail=emailPArt.getText().toString();
         String idP = id_producto.getText().toString();
         Cursor cursor = db.rawQuery("Select id from productos where id_email='"+ DatoEmail+"' and id="+idP,null);
@@ -208,10 +204,6 @@ public class PerfilArticulos extends AppCompatActivity {
             //Validar
             if (cantidad == 1) {
                 Toast.makeText(this, "Artículo modificado correctamente", Toast.LENGTH_SHORT).show();
-                //sinMod.setEnabled(false);
-                // Intent i = new Intent(getApplicationContext(),MainActivity.class);
-               // startActivity(i);
-              //  finish();
             } else {
                 Toast.makeText(this, "El artículo no existe", Toast.LENGTH_SHORT).show();
 
@@ -220,7 +212,7 @@ public class PerfilArticulos extends AppCompatActivity {
 
 
         }else {
-            Toast.makeText(this, "No existe ese ID de artículo.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Debe seleccionar una categoría y/o ERROR.", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -239,15 +231,6 @@ public class PerfilArticulos extends AppCompatActivity {
         if (!idP.isEmpty()){
             int cantidad = db.delete("productos","id=" + idP + " and id_email='"+DatoEmail+"'"  , null);  //cantidad de articulos borrados ,, metodo delete
             db.close();
-
-          /**  sp_categoria.setSelection(0);
-            txt_nombreP.setText("");
-            txt_descripcionP.setText("");
-            txt_tiendaP.setText("");
-            txt_marcaP.setText("");
-            txt_precioP.setText("");
-            txt_cantidadP.setText("");**/
-
 
             if (cantidad == 1){
                 Toast.makeText(this, "Articulo eliminado correctamente", Toast.LENGTH_SHORT).show();
@@ -419,9 +402,7 @@ public class PerfilArticulos extends AppCompatActivity {
         }
     }
 
-    //fin
 
-    //Ctrl
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
@@ -442,7 +423,7 @@ public class PerfilArticulos extends AppCompatActivity {
 
 
         }else {
-            Toast.makeText(this, "Debe seleccionar una foto.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Puede seleccionar una foto si lo desea.", Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -450,10 +431,7 @@ public class PerfilArticulos extends AppCompatActivity {
 
     public void GuardarFotoProductoMod(View view){
         final Bitmap bitmap2 = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
-        //PutExtra
-        //   Bundle miBundleR=this.getIntent().getExtras();
-        // final String DatoEmail=miBundleR.getString("emailRodrigo");
-        //Bundle miBundle2=this.getIntent().getExtras();
+
         String DatoEmail= emailPArt.getText().toString();
 
         //Create dialog to enter name to save
@@ -482,12 +460,12 @@ public class PerfilArticulos extends AppCompatActivity {
                 if (!TextUtils.isEmpty(editText.getText().toString()))
                 {
                     conn.addBitmapProductos(editText.getText().toString(), Utils.getBytes(bitmap2),idproducto.getText().toString());
-                    Toast.makeText(PerfilArticulos.this, "Save success !!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PerfilArticulos.this, "Guardada correctamente!!", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 else
                 {
-                    Toast.makeText(PerfilArticulos.this, "Name can't be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PerfilArticulos.this, "El email no puede estar vacío.", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -499,7 +477,6 @@ public class PerfilArticulos extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        // Toast.makeText(this, "Botón atrás inhabilitado", Toast.LENGTH_SHORT).show();
     }
 
     public void SinMod(View view)

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -22,17 +21,12 @@ public class Inicio extends AppCompatActivity {
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
     SQLiteDatabase db;
     ImageView avatarImage;
-  //  Bundle datos;
     CardView cardInsertar, cardCategoria, cardEconomia, cardListadoArticulos ,cardPerfil, cardInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-
-      //  datos = getIntent().getExtras();
-       // String datosObtenidos = datos.getString("datoEmail");
-
 
         Bundle miBundle=this.getIntent().getExtras();
         String DatoEmail=miBundle.getString("email");
@@ -115,7 +109,7 @@ public class Inicio extends AppCompatActivity {
 
                 Bundle miBundle2=new Bundle();
                 miBundle2.putString("emailInsertarR",txtNombreU.getText().toString());
-                //miBundle2.putString("emailListado",txtNombreU.getText().toString());
+
 
                 intent.putExtras(miBundle2);
 

@@ -290,9 +290,6 @@ public class Registro extends AppCompatActivity {
         }
     }
 
-    //fin
-
-    //Ctrl
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
@@ -325,9 +322,6 @@ public class Registro extends AppCompatActivity {
 
     public void GuardarFoto(View view){
         final Bitmap bitmap = ((BitmapDrawable)imageView.getDrawable()).getBitmap();
-        //PutExtra
-          //   Bundle miBundleR=this.getIntent().getExtras();
-            // final String DatoEmail=miBundleR.getString("emailRodrigo");
 
         //Create dialog to enter name to save
         AlertDialog.Builder builder = new AlertDialog.Builder(Registro.this);
@@ -364,11 +358,6 @@ public class Registro extends AppCompatActivity {
         builder.show();
     }
 
-    /**
-    @Override
-    public void onBackPressed() {
 
-    }
-    **/
 }
 

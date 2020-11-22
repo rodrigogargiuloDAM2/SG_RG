@@ -17,7 +17,7 @@ import com.example.approdri.Utils.Utils;
 public class Perfil extends AppCompatActivity {
 
     AdminSQLiteOpenHelper conn = new AdminSQLiteOpenHelper(this,"administracion", null, 1);
-    TextView tv_id,tv_nombre, tv_apellido, tv_email, tv_tel;
+    TextView tv_nombre, tv_apellido, tv_email, tv_tel;
     ImageView imagenPerfil;
 
 
@@ -31,7 +31,7 @@ public class Perfil extends AppCompatActivity {
         Bundle miBundle2=this.getIntent().getExtras();
         String DatoEmail=miBundle2.getString("email2");
 
-      //  tv_id=findViewById(R.id.tv_idP2);
+
         tv_nombre=findViewById(R.id.tv_nombreP2);
         tv_apellido=findViewById(R.id.tv_apellidoP2);
         tv_email=findViewById(R.id.tv_emailP2);
@@ -39,8 +39,6 @@ public class Perfil extends AppCompatActivity {
         imagenPerfil=findViewById(R.id.imgPerfil2);
 
         //Imagen
-        //Bundle miBundle=this.getIntent().getExtras();
-        //String DatoEmail2=miBundle.getString("email2");
         imagenPerfil = findViewById(R.id.imgPerfil2);
 
         //Mostrar imagen
@@ -65,7 +63,6 @@ public class Perfil extends AppCompatActivity {
         Cursor datosPerfil=db.rawQuery("SELECT nombre,apellido, email, telefono FROM usuarios where email='"+DatoEmail+"'",null);
         while (datosPerfil.moveToNext()) {
 
-           // tv_id.setText(datosPerfil.getString(0));
             tv_nombre.setText(datosPerfil.getString(0));
             tv_apellido.setText(datosPerfil.getString(1));
             tv_email.setText(datosPerfil.getString(2));

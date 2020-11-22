@@ -22,8 +22,7 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder  {
-        private static TextView  email ,nUsuario;
-        int varUsu=0;
+        private static TextView  email ;
         private static CardView cardPerfiles;
 
 
@@ -36,7 +35,6 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
 
             email=itemView.findViewById(R.id.tv_email_L2);
-            nUsuario=itemView.findViewById(R.id.tv_Usuario);
             cardPerfiles=itemView.findViewById(R.id.cardPerfiles);
 
 
@@ -51,18 +49,13 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
         this.usuariosList = usuariosList;
     }
 
-    // public RecyclerViewAdaptador(List<DatosUsuarios> usuariosList){
-     //   this.usuariosList=usuariosList;
-    //}
+
 
 
     @Override
     public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
 
        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.disegno_recycler,parent,false);
-        //View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_grid_usuarios,parent,false);
-
-
 
         return new ViewHolder(view);
     }
@@ -82,7 +75,7 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
 
 
 
-        // holder.setOnClickListener();
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,8 +84,6 @@ public class RecyclerViewAdaptador extends RecyclerView.Adapter<RecyclerViewAdap
                 holder.itemView.getContext().startActivity(intent);
             }
         });
-
-
 
     }
 

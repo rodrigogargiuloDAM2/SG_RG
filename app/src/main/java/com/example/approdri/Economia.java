@@ -151,7 +151,6 @@ public class Economia extends AppCompatActivity {
         String DatoEmail=miBundle2.getString("emailEcon");
 
         SQLiteDatabase db = conn.getWritableDatabase(); //abrimos BBDD
-        // String id=txtID.getText().toString();
 
         int cantidad = db.delete("economia","email='" + DatoEmail+"'", null);  //cantidad de articulos borrados ,, metodo delete
 
@@ -160,10 +159,10 @@ public class Economia extends AppCompatActivity {
 
 
         if (cantidad >= 1 ){
-            Toast.makeText(this, "Lista Economía Vaciada, Usuario: " + DatoEmail, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Lista Vaciada, Usuario: " + DatoEmail, Toast.LENGTH_SHORT).show();
             finish();
         }else {
-            Toast.makeText(this, "Error al vaciar lista", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error y/o no hay elementos en la lista", Toast.LENGTH_SHORT).show();
         }
 
 

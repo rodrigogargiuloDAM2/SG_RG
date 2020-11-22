@@ -5,24 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,26 +27,13 @@ public class MainActivity extends AppCompatActivity {
         btnIrRegistro=findViewById(R.id.btnRegistro);
         btnIngresar=findViewById(R.id.btnInicioSesion);
 
-      /**  btnIrRegistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText txtEmail=findViewById(R.id.edt_email_I);
-                Intent i = new Intent(getApplicationContext(),Registro.class);
-                Bundle miBundle=new Bundle();
-                miBundle.putString("emailR",txtEmail.getText().toString());
-                startActivity(i);
-            }
-        });  **/
+
 
 
     }
 
     public void Registrarse(View view){
-        EditText txtEmail=findViewById(R.id.edt_email_I);
         Intent i = new Intent(getApplicationContext(),Registro.class);
-       // Bundle miBundleR=new Bundle();
-        //miBundleR.putString("emailRodrigo",txtEmail.getText().toString());
-        //i.putExtras(miBundleR);
         startActivity(i);
     }
 

@@ -14,7 +14,7 @@ import com.example.approdri.Utils.Utils;
 
 public class Perfil2 extends AppCompatActivity {
 
-    private TextView idMD,emailMD, nombreMD, apellidoMD,telefonoMD;
+    private TextView emailMD, nombreMD, apellidoMD,telefonoMD;
     private DatosUsuarios itemDetail;
     AdminSQLiteOpenHelper conn=new AdminSQLiteOpenHelper(this,"administracion",null,1);
     ImageView imgP2;
@@ -47,7 +47,6 @@ public class Perfil2 extends AppCompatActivity {
         Cursor consultaDatosP2 = db.rawQuery("select nombre,apellido,telefono,email from usuarios where email='"+ email +"'",null);
         consultaDatosP2.moveToFirst();
         nombreMD.setText("NOMBRE: "+ consultaDatosP2.getString(0));
-       // idMD.setText("ID: "+consultaDatosP2.getString(0));
         apellidoMD.setText("APELLIDO: "+consultaDatosP2.getString(1));
         telefonoMD.setText("TELÉFONO: "+consultaDatosP2.getString(2));
         db.close();
@@ -69,7 +68,6 @@ public class Perfil2 extends AppCompatActivity {
         apellidoMD=findViewById(R.id.tv_apellidoP2);
         emailMD=findViewById(R.id.tv_emailP2);
         telefonoMD=findViewById(R.id.tv_telefonoP2);
-      //  idMD=findViewById(R.id.tv_idP2);
         imgP2=findViewById(R.id.imgPerfil2);
 
     }
