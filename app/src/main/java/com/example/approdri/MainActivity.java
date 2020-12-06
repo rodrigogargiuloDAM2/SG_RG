@@ -1,10 +1,12 @@
 package com.example.approdri;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnIngresar, btnIrRegistro;
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
 
+    SQLiteDatabase db;
+
 
 
     @Override
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnIrRegistro=findViewById(R.id.btnRegistro);
         btnIngresar=findViewById(R.id.btnInicioSesion);
+
 
 
 
@@ -67,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             txtEmail.setText("");
             txtContrasegna.setText("");
             txtEmail.findFocus();
+
             admin.cerrar();
         }catch (SQLException e){
             e.printStackTrace();

@@ -39,7 +39,7 @@ public class Perfil2 extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(getApplicationContext(), email + " not found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), email + " Sin imágen de perfíl", Toast.LENGTH_SHORT).show();
         }
 
 

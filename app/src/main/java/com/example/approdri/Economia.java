@@ -118,7 +118,7 @@ public class Economia extends AppCompatActivity {
                 String[] arreglo = new String[cantidad];
                 if (c.moveToFirst()){
                     do {
-                        String linea = "ID: "+c.getInt(0) +" \nPresupuesto: "+c.getInt(1) + " \nPrecio Total: " +c.getInt(2) + " \nBeneficios: " + c.getInt(3)+ " \nNúmero de Productos: " + c.getString(4);
+                        String linea = "ID: "+c.getInt(0) +" \nPresupuesto: "+c.getDouble(1) + " \nPrecio Total: " +c.getDouble(2) + " \nBeneficios: " + c.getDouble(3)+ " \nNúmero de Productos: " + c.getString(4);
 
                         arreglo[i] = linea;
                         i++;

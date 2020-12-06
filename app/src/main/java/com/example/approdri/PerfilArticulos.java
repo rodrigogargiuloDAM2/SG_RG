@@ -86,14 +86,14 @@ public class PerfilArticulos extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(getApplicationContext(), email + " not found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Id artículo: "+id + " // Sin imágen de artículo", Toast.LENGTH_SHORT).show();
         }
 
 
         db=conn.getReadableDatabase();
         Cursor consultaDatosP2 = db.rawQuery("select * from productos where id_email='"+ email +"' and id='" + id + "';",null);
         consultaDatosP2.moveToFirst();
-        //id_producto.setText("ID: " + consultaDatosP2.getString(0));
+
         nombreProducto.setText(consultaDatosP2.getString(1));
         descripcion.setText(consultaDatosP2.getString(2));
         tienda.setText( consultaDatosP2.getString(3));
@@ -212,7 +212,7 @@ public class PerfilArticulos extends AppCompatActivity {
 
 
         }else {
-            Toast.makeText(this, "Debe seleccionar una categoría y/o ERROR.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Debe seleccionar una categoría y/o llenar todos los campos o ERROR DESCONOCIDO.", Toast.LENGTH_SHORT).show();
         }
 
 

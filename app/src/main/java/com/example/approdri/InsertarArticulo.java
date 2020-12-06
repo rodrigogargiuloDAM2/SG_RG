@@ -24,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -131,6 +132,9 @@ public class InsertarArticulo extends AppCompatActivity {
 
 
 
+
+
+
         //spinner
         comboCategorias = findViewById(R.id.spCategoria);
 
@@ -141,6 +145,7 @@ public class InsertarArticulo extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adaptador= new ArrayAdapter(this,android.R.layout.simple_spinner_item, listaCategorias);
         comboCategorias.setAdapter(adaptador);
+
 
         //Accion boton sumar
         btnMas.setOnClickListener(new View.OnClickListener() {
@@ -359,12 +364,12 @@ public class InsertarArticulo extends AppCompatActivity {
                 if (!TextUtils.isEmpty(editText.getText().toString()))
                 {
                     conn.addBitmapProductos(editText.getText().toString(), Utils.getBytes(bitmap),nProducto.getText().toString());
-                    Toast.makeText(InsertarArticulo.this, "Save success !!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InsertarArticulo.this, "Guardado con éxito !!", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 else
                 {
-                    Toast.makeText(InsertarArticulo.this, "Name can't be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InsertarArticulo.this, "El email no puede estar vacío", Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -455,9 +460,10 @@ public class InsertarArticulo extends AppCompatActivity {
             btnMenos.setEnabled(false);
 
 
-            Toast.makeText(this, "Ahora ingrese una foto", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingrese una foto si lo desea", Toast.LENGTH_SHORT).show();
         }else {
             Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Debes al menos crear una categoría para asignarle al artículo", Toast.LENGTH_SHORT).show();
         }
 
     }

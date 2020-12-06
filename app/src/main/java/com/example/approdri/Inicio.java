@@ -4,19 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.approdri.Utils.Utils;
 
+import java.util.ArrayList;
+
 public class Inicio extends AppCompatActivity {
     TextView txtNombreU;
+
 
     AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"administracion",null,1);
     SQLiteDatabase db;
@@ -27,6 +33,7 @@ public class Inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
 
         Bundle miBundle=this.getIntent().getExtras();
         String DatoEmail=miBundle.getString("email");
@@ -41,8 +48,10 @@ public class Inicio extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(getApplicationContext(), DatoEmail + " not found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), DatoEmail + " Sin imágen de perfíl", Toast.LENGTH_SHORT).show();
         }
+
+
 
 
         //fin
@@ -140,7 +149,17 @@ public class Inicio extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+
+
     }
+
+
+
+
+
+
 
     //Método para no retroceder con el botón del móvil
 

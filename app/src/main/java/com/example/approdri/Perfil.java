@@ -50,7 +50,7 @@ public class Perfil extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(getApplicationContext(), DatoEmail + " not found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), DatoEmail + " Sin imágen de Perfíl", Toast.LENGTH_SHORT).show();
         }
 
 
