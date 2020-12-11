@@ -53,7 +53,7 @@ public class PerfilArticulos extends AppCompatActivity {
 
     private Uri imageUri;
 
-    Button tomarFoto, btn_save , sinMod;
+    Button tomarFoto, btn_save , sinMod, salir;
 
 
     ImageView imageView;
@@ -135,7 +135,8 @@ public class PerfilArticulos extends AppCompatActivity {
         imgPArt=findViewById(R.id.imgPerfilArticulos);
         sinMod=findViewById(R.id.btnSalirProdMP);
         sinMod.setEnabled(true);
-
+        salir=findViewById(R.id.btnSalirProdMP);
+        salir.setEnabled(true);
         //Spinner
         sp_categoria=findViewById(R.id.sp_categoriaPArt);
 
@@ -203,7 +204,9 @@ public class PerfilArticulos extends AppCompatActivity {
 
             //Validar
             if (cantidad == 1) {
+                salir.setEnabled(false);
                 Toast.makeText(this, "Artículo modificado correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Seleccione una nueva foto y luego la app cerrará su sesión para aplicar cambios", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "El artículo no existe", Toast.LENGTH_SHORT).show();
 
@@ -461,7 +464,9 @@ public class PerfilArticulos extends AppCompatActivity {
                 {
                     conn.addBitmapProductos(editText.getText().toString(), Utils.getBytes(bitmap2),idproducto.getText().toString());
                     Toast.makeText(PerfilArticulos.this, "Guardada correctamente!!", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
                     finish();
+                    startActivity(i);
                 }
                 else
                 {

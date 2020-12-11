@@ -81,6 +81,7 @@ public class RecyclerViewAdaptadorArticulos extends RecyclerView.Adapter<Recycle
                 intent.putExtra("itemDetailProductos", item);
                 intent.putExtra("itemDetailProductosId",item);
                 holder.itemView.getContext().startActivity(intent);
+
             }
         });
 
