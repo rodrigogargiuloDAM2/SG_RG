@@ -272,6 +272,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="10dp"
+                        android:drawableRight="@drawable/euro_opt"
                         android:inputType="numberDecimal"
                         android:text="Precio: "
                         android:textColor="@color/colorBlanco"
