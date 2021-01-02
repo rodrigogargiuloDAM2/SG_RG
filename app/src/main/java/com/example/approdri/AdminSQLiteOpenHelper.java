@@ -19,19 +19,26 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String TUsuarios ="create table if not exists usuarios(email VARCHAR(100) NOT NULL PRIMARY KEY UNIQUE , nombre VARCHAR(100),apellido VARCHAR(100),  telefono VARCHAR(100), contrasegna VARCHAR(100) NOT NULL, img BLOB);";
+        String TUsuarios ="create table if not exists usuarios(email VARCHAR(100) NOT NULL PRIMARY KEY UNIQUE ," +
+                " nombre VARCHAR(100),apellido VARCHAR(100),  telefono VARCHAR(100), contrasegna VARCHAR(100) NOT NULL," +
+                " img BLOB);";
+
         String TProductos ="create table if not exists productos(" +
-                "id INTEGER PRIMARY KEY AUTOINCREMENT, nombreProducto VARCHAR(100), descripcion VARCHAR(100), tienda VARCHAR(100), marca VARCHAR(100),precio DECIMAL(6,2) DEFAULT 0.00, cantidad int DEFAULT 0, img BLOB, id_email VARCHAR(100) NOT NULL, id_categoria VARCHAR(100) NOT NULL,  FOREIGN KEY (id_email) REFERENCES usuarios(email),FOREIGN KEY (id_categoria) REFERENCES categorias(categoria));";
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, nombreProducto VARCHAR(100)," +
+                " descripcion VARCHAR(100), tienda VARCHAR(100), marca VARCHAR(100),precio DECIMAL(6,2) DEFAULT 0.00," +
+                " cantidad int DEFAULT 0, img BLOB, id_email VARCHAR(100) NOT NULL, id_categoria VARCHAR(100) NOT NULL," +
+                "  FOREIGN KEY (id_email) REFERENCES usuarios(email)," +
+                "FOREIGN KEY (id_categoria) REFERENCES categorias(categoria));";
+
         String TCategorias="create table if not exists categorias(categoria VARCHAR(100) NOT NULL PRIMARY KEY UNIQUE);";
-        String TEconomia="create table if not exists economia(id_econ INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, presupuesto DECIMAL(8,2), precioTotal DECIMAL(8,2), beneficios DECIMAL(8,2), productosAlmacenados int, email VARCHAR(100), FOREIGN KEY (email) REFERENCES usuarios(email));";
+        String TEconomia="create table if not exists economia(id_econ INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                " presupuesto DECIMAL(8,2), precioTotal DECIMAL(8,2), beneficios DECIMAL(8,2), productosAlmacenados int," +
+                " email VARCHAR(100), FOREIGN KEY (email) REFERENCES usuarios(email));";
 
         db.execSQL(TUsuarios);
         db.execSQL(TEconomia);
         db.execSQL(TCategorias);
         db.execSQL(TProductos);
-
-
-
     }
 
     @Override
